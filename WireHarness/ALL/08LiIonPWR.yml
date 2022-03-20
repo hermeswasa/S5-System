@@ -1,3 +1,52 @@
 connectors:
+  X1: &template_con
+    type: XT30
+    subtype: male
+    pinlabels: [GND, VCC]
+  X2:
+    <<: *template_con
+  X3:
+    <<: *template_con
+  X4:
+    <<: *template_con
+  X5:
+    <<: *template_con
+  X6:
+    <<: *template_con
 
+cables:
+  W1: &template_wire
+    gauge: 16 AWG
+    length: 0.2
+    colors: [BK,RD]
+    category: bundle
+  W2:
+    <<: *template_wire
+  W3:
+    <<: *template_wire
+  W4:
+    <<: *template_wire
+  W5:
+    <<: *template_wire
 
+connections:
+  -
+    - X1: [1-2]
+    - W1: [1-2]
+    - X2: [1-2]
+  -
+    - X3: [1-2]
+    - W2: [1-2]
+    - X2: [1-2]
+  -
+    - X3: [1-2]
+    - W3: [1-2]
+    - X4: [1-2]
+  -
+    - X5: [1-2]
+    - W4: [1-2]
+    - X4: [1-2]
+  -
+    - X5: [1-2]
+    - W5: [1-2]
+    - X6: [1-2]
