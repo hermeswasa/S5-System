@@ -1,0 +1,25 @@
+connectors:
+  X3-1: &template1
+    pinlabels: [VCC, TX7, RX7, CTS7, RTS7, GND] # pincount implicit in pinout
+    type: JST GH
+    subtype: male
+    notes: to Pixhawk5 Tel1
+  X3-2:
+    <<: *template1
+    type: molex picoblade
+    subtype: male
+    notes: to Telemetry
+
+cables:
+  W3:
+    wirecount: 4
+    length: 1
+    gauge: 28 AWG
+    show_equiv: true
+    colors: [RD,BK,BK,BK]
+
+connections:
+  -
+    - X3-1: [1-4]
+    - W3: [1-4]
+    - X3-2: [1-4]

@@ -1,0 +1,23 @@
+connectors:
+  X5-1: &template1
+    pinlabels: [VDD_5V, VDD_5V, SCL, SDA, GND, GND] # pincount implicit in pinout
+    type: Molex CLIK-MAte 2.0mm
+    subtype: male
+    notes: to Pixhawk5 POW1
+  X5-2:
+    <<: *template1
+    notes: to PowerModule
+
+cables:
+  W5:
+    wirecount: 6
+    length: 0.65
+    gauge: 24 AWG
+    show_equiv: true
+    colors: [RD,BK,BK,BK,BK,BK]
+
+connections:
+  -
+    - X5-1: [1-6]
+    - W5: [1-6]
+    - X5-2: [1-6]

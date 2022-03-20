@@ -1,0 +1,25 @@
+connectors:
+  X2-1: &template1
+    pinlabels: [SBUS_3V, VDD_5V,GND] # pincount implicit in pinout
+    type: QI
+    subtype: male
+    notes: to Pixhawk5 RC IN
+  X2-2:
+    <<: *template1
+    type: QI
+    subtype: male
+    notes: to Futaba RS3008SB
+
+cables:
+  W2:
+    wirecount: 3
+    length: 0.3
+    gauge: 28 AWG
+    show_equiv: true
+    colors: [WH,RD,BK]
+
+connections:
+  -
+    - X2-1: [1-3]
+    - W2: [1-3]
+    - X2-2: [1-3]

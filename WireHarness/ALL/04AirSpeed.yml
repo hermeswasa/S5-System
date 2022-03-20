@@ -1,0 +1,25 @@
+connectors:
+  X4-1: &template1
+    pinlabels: [VCC, SCL3, SDA3,GND] # pincount implicit in pinout
+    type: JST GH
+    subtype: male
+    notes: to Pixhawk5 I2C
+  X4-2:
+    <<: *template1
+    type: molex picoblade
+    subtype: plug housing
+    notes: to AirSpeed
+
+cables:
+  W4:
+    wirecount: 4
+    length: 1
+    gauge: 28 AWG
+    show_equiv: true
+    colors: [RD,BK,BK,BK]
+
+connections:
+  -
+    - X4-1: [1-4]
+    - W4: [1-4]
+    - X4-2: [1-4]

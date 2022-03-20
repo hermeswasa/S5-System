@@ -1,0 +1,25 @@
+connectors:
+  X7-1: &template1
+    pinlabels: [VCC, GND] # pincount implicit in pinout
+    type: XT60
+    subtype: female
+    notes: to PowerModule
+  X7-2:
+    <<: *template1
+    subtype: male
+    notes: to ESC
+
+cables:
+  W7:
+    wirecount: 2
+    length: 0.3
+    gauge: 14 AWG
+    show_equiv: true
+    colors: [RD,BK]
+    notes: Twisted
+
+connections:
+  -
+    - X7-1: [1-2]
+    - W7: [2,1]
+    - X7-2: [1-2]
